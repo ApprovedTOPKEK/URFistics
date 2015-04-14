@@ -1,0 +1,180 @@
+h1{
+	font-family: Impact;
+	font-weight: bold;
+	color: #c71f1f;
+	text-align: center;
+	font-size: 3em; 
+	text-shadow: 10px 10px 5px #4f4c4c;
+}
+span{
+	font-family: "Helvetica";
+	color: white; 
+	font-style: italic;
+	font-size: 1.5em
+}
+#stats{
+	width: 45%;
+	float: left;
+}
+#diamondStats{
+	background-color: #e7c047;
+	border-radius: 25px 25px 0px 0px;
+	padding: none;
+	position: relative; 
+	border: 1px solid #9c8335;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+.leagueIcon{
+	float: left;
+}
+#platinumStats{
+	background-color: #e7c047;
+	padding: none; 
+	position: relative;
+	border: 1px solid #9c8335;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+#goldStats{ 
+	background-color: #e7c047;
+	padding: none; 
+	position: relative; 
+	border: 1px solid #9c8335;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+#silverStats{
+	background-color: #e7c047;
+	padding: none;
+	position: relative; 
+	border: 1px solid #9c8335;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+#bronzeStats{
+	background-color: #e7c047;
+	border-radius: 0px 0px 25px 0px;
+	padding: none;
+	position: relative;
+	border: 1px solid #9c8335;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+.statTable{
+	position: relative;
+	width: 100%;
+	border-collapse: collapse;
+}
+td{
+	font-family: Impact;
+	color: #d8d2d2;
+	text-align: left;
+	border: 1px solid #d8d2d2;
+	width: 100%;
+	padding: 0.5em;
+	background-color: #ec2b2b;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}	
+.leagueButton{
+	font-family: Impact;
+	text-align: center;
+	text-decoration: bold;
+	color: #225fc7;
+	font-size: 1.5em;
+	padding: 1.1em;
+}
+#refreshButton{
+	text-align: center;
+	font-family: Impact;
+	color: #a5b80c;
+	background-color: #239013;
+	width: 20%;
+	border-radius: 0px 0px 10px 10px; 
+}
+#refreshText{
+	position: inline-block;
+	float: right; 
+	padding: 0.5em;
+	font-size: 1.5em;
+	text-align: center; 
+}
+#refreshImg{
+	height: 20%; 
+	width: 20%;
+	padding: 0.25em;
+}
+#imgDiv{
+	text-align: left; 
+}
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.5;
+	filter: alpha(opacity=50);
+	z-index: -20;
+}
+#topText{ 
+	text-align: center; 
+	font-family: Impact; 
+	color: #384185;
+	font-size: 2em;
+	display: inline-block;
+	padding-top: 1em;
+}
+#profileSection{
+	text-align: center; 
+}
+#bar{ 
+	height: 4em;
+	display: inline-block;
+	font-family: Impact;	
+}
+#inputBar{
+	text-align: center;
+	font-size: 2em;
+	color: #c5c1c1;
+	font-family: Impact;
+	border: 5px solid #c5c1c1; 
+	border-radius: 10px 0px 0px 10px;
+	padding: none;
+	float: left;
+	margin: none;
+	height: 80%;
+	box-shadow: 10px 10px 5px #4f4c4c;	
+}
+#searchButton{
+	width: 5em;  
+	height: 100%;
+	border: 5px solid #c5c1c1; 
+	border-radius: 0px 10px 10px 0px;
+	position: relative;
+	padding: 0em;
+	float: right;
+	margin: none;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+#regionSelector{
+	height: 100%;
+	border: 5px solid #c5c1c1; 
+	position: relative;
+	padding: none;
+	font-family: Impact;
+	color: white;
+	font-size: 1em;
+	background-color: #c5c1c1;
+	margin: none;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+#playerStats{
+	float: right; 
+	width: 45%;
+}
+#playerStattable{
+	position: relative;
+	width: 100%;
+	border-collapse: collapse;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
