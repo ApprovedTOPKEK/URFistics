@@ -8,7 +8,7 @@ $settings = array();
 updateSettings();
 
 //API-KEY
-$apiKey = "b7ca061e-63e0-49cb-bac1-a4886089badf";
+$apiKey = include 'apikey.php';
 
 //Check if it is time to fetch new games & fetch 'em
 include 'DataProcessor.php';
