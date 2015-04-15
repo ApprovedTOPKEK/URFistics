@@ -14,382 +14,360 @@
 		<span>Welcome Summoners, check out the statistics of the new URF mode. On this site, you can see the URF statistics of each League. You can also check your own statistics and compare 
 		yours with your deserved league URFwise.</br></br></span>
 		<div id="stats">
-			<div id="leagueTabs">
-				<div id="diamondStats">
-					<div class="leagueButton" onclick="toggleBtn('diamondStats')">
-						<img class="leagueIcon" src="Diamond.png"/> DIAMOND
-					</div>
-					<table class="statTable">
-						<tr> 
-							<td>Average Score</td>
-							<td>{Score}</td>
-						</tr>
-						<tr> 
-							<td>Most Banned</td>
-							<td><img class="Icons" src="c{TopBan1}.png"/> <img class="Icons" src="c{TopBan2}.png"/> <img class="Icons" src="c{TopBan3}.png"/> </td>
-						</tr>
-						<tr> 
-							<td>Most Picked</td>
-							<td><img class="Icons" src="c{TopPick}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Summoner Spells</td>
-							<td><img class="Icons" src="s{TopSpell1}.png"/> <img class="Icons" src="s{TopSpell2}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Items</td>
-							<td>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem1}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem2}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem3}.png"/>
-							</td>
-						</tr>
-						<tr> 
-							<td>Average KDA</td>
-							<td>{Kills}/{Deaths}/{Assists}</td>
-						</tr>
-						<tr> 
-							<td>Average Creep Score</td>
-							<td>{CS}</td>
-						</tr>
-						<tr> 
-							<td>Average Gold</td>
-							<td>{Gold}</td>
-						</tr>
-						<tr> 
-							<td>Average Wards Placed</td>
-							<td>{Wards}</td>
-						</tr>
-						<tr> 
-							<td>Average Dragons</td>
-							<td>{Dragons}</td>
-						</tr>
-						<tr> 
-							<td>Average Barons</td>
-							<td>{Barons}</td>
-						</tr>
-						<tr> 
-							<td>Average Double Kills</td>
-							<td>{Doubles}</td>
-						</tr>
-						<tr> 
-							<td>Average Triple Kills</td>
-							<td>{Triples}</td>
-						</tr>
-						<tr> 
-							<td>Average Quadra Kills</td>
-							<td>{Quadras}</td>
-						</tr> 
-						<tr> 
-							<td>Average Penta Kills</td>
-							<td>{Pentas}</td>
-						</tr>
-						<tr> 
-							<td>Average Largest Killing Spree</td>
-							<td>{Spree}</td>
-						</tr>
-					</table>      	    
+			<div id="diamondStats">
+				<div class="leagueButton" onclick="toggleBtn('diamondStats')">
+					<img class="leagueIcon" src="Diamond.png"/> DIAMOND
 				</div>
-				<div id="platinumStats"> 
-					<div class="leagueButton" onclick="toggleBtn('platinumStats')">
-						<img class="leagueIcon" src="Platinum.png"/> PLATINUM
-					</div>
-					<table class="statTable">
-						<tr> 
-							<td>Average Score</td>
-							<td>{Score}</td>
-						</tr>
-						<tr> 
-							<td>Most Banned</td>
-							<td><img class="Icons" src="c{TopBan1}.png"/> <img class="Icons" src="c{TopBan2}.png"/> <img class="Icons" src="c{TopBan3}.png"/> </td>
-						</tr>
-						<tr> 
-							<td>Most Picked</td>
-							<td><img class="Icons" src="c{TopPick}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Summoner Spells</td>
-							<td><img class="Icons" src="s{TopSpell1}.png"/> <img class="Icons" src="s{TopSpell2}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Items</td>
-							<td>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem1}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem2}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem3}.png"/>
-							</td>
-						</tr>
-						<tr> 
-							<td>Average KDA</td>
-							<td>{Kills}/{Deaths}/{Assists}</td>
-						</tr>
-						<tr> 
-							<td>Average Creep Score</td>
-							<td>{CS}</td>
-						</tr>
-						<tr> 
-							<td>Average Gold</td>
-							<td>{Gold}</td>
-						</tr>
-						<tr> 
-							<td>Average Wards Placed</td>
-							<td>{Wards}</td>
-						</tr>
-						<tr> 
-							<td>Average Dragons</td>
-							<td>{Dragons}</td>
-						</tr>
-						<tr> 
-							<td>Average Barons</td>
-							<td>{Barons}</td>
-						</tr>
-						<tr> 
-							<td>Average Double Kills</td>
-							<td>{Doubles}</td>
-						</tr>
-						<tr> 
-							<td>Average Triple Kills</td>
-							<td>{Triples}</td>
-						</tr>
-						<tr> 
-							<td>Average Quadra Kills</td>
-							<td>{Quadras}</td>
-						</tr> 
-						<tr> 
-							<td>Average Penta Kills</td>
-							<td>{Pentas}</td>
-						</tr>
-						<tr> 
-							<td>Average Largest Killing Spree</td>
-							<td>{Spree}</td>
-						</tr>
-					</table>
+				<table class="statTable">
+					<tr> 
+						<td>Average Score</td>
+						<td>{score}</td>
+					</tr>
+					<tr> 
+						<td>Most Banned</td>
+						<td><img src="c{Ban1}.png"/> <img src="c{Ban2}.png"/> <img src="c{Ban3}.png"/> </td>
+					</tr>
+					<tr> 
+						<td>Most Picked</td>
+						<td><img src="c{Pick}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Summoner Spells</td>
+						<td><img src="s{Spell1}.png"/> <img src="s{Spell2}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Items</td>
+						<td> TODO </td>
+					</tr>
+					<tr> 
+						<td>Average Creep Score</td>
+						<td>{CS}</td>
+					</tr>
+					<tr> 
+						<td>Average Gold</td>
+						<td>{Gold}</td>
+					</tr>
+					<tr> 
+						<td>Average Wards Placed</td>
+						<td>{Wards}</td>
+					</tr>
+					<tr> 
+						<td>Average KDA</td>
+						<td>{Kills}/{Deaths}/{Assists}</td>
+					</tr>
+					<tr> 
+						<td>Average Dragons</td>
+						<td>{Dragons}</td>
+					</tr>
+					<tr> 
+						<td>Average Barons</td>
+						<td>{Barons}</td>
+					</tr>
+					<tr> 
+						<td>Average Double Kills</td>
+						<td>{Double Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Triple Kills</td>
+						<td>{Triple Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Quadra Kills</td>
+						<td>{Quadra Kills}</td>
+					</tr> 
+					<tr> 
+						<td>Average Penta Kills</td>
+						<td>{Penta Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Largest Killing Spree</td>
+						<td>{Largest Killing Spree}</td>
+					</tr>
+				</table>      	    
+			</div>
+			<div id="platinumStats"> 
+				<div class="leagueButton" onclick="toggleBtn('platinumStats')">
+					<img class="leagueIcon" src="Platinum.png"/> PLATINUM
 				</div>
-				<div id="goldStats">
-					<div class="leagueButton" onclick="toggleBtn('goldStats')">			
-						<img class="leagueIcon" src="Gold.png"/> GOLD
-					</div>
-					<table class="statTable">
-						<tr> 
-							<td>Average Score</td>
-							<td>{Score}</td>
-						</tr>
-						<tr> 
-							<td>Most Banned</td>
-							<td><img class="Icons" src="c{TopBan1}.png"/> <img class="Icons" src="c{TopBan2}.png"/> <img class="Icons" src="c{TopBan3}.png"/> </td>
-						</tr>
-						<tr> 
-							<td>Most Picked</td>
-							<td><img class="Icons" src="c{TopPick}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Summoner Spells</td>
-							<td><img class="Icons" src="s{TopSpell1}.png"/> <img class="Icons" src="s{TopSpell2}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Items</td>
-							<td>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem1}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem2}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem3}.png"/>
-							</td>
-						</tr>
-						<tr> 
-							<td>Average KDA</td>
-							<td>{Kills}/{Deaths}/{Assists}</td>
-						</tr>
-						<tr> 
-							<td>Average Creep Score</td>
-							<td>{CS}</td>
-						</tr>
-						<tr> 
-							<td>Average Gold</td>
-							<td>{Gold}</td>
-						</tr>
-						<tr> 
-							<td>Average Wards Placed</td>
-							<td>{Wards}</td>
-						</tr>
-						<tr> 
-							<td>Average Dragons</td>
-							<td>{Dragons}</td>
-						</tr>
-						<tr> 
-							<td>Average Barons</td>
-							<td>{Barons}</td>
-						</tr>
-						<tr> 
-							<td>Average Double Kills</td>
-							<td>{Doubles}</td>
-						</tr>
-						<tr> 
-							<td>Average Triple Kills</td>
-							<td>{Triples}</td>
-						</tr>
-						<tr> 
-							<td>Average Quadra Kills</td>
-							<td>{Quadras}</td>
-						</tr> 
-						<tr> 
-							<td>Average Penta Kills</td>
-							<td>{Pentas}</td>
-						</tr>
-						<tr> 
-							<td>Average Largest Killing Spree</td>
-							<td>{Spree}</td>
-						</tr>
-					</table>
+				<table class="statTable">
+					<tr> 
+						<td>Average Score</td>
+						<td>{score}</td>
+					</tr>
+					<tr> 
+						<td>Most Banned</td>
+						<td><img src="c{Ban1}.png"/> <img src="c{Ban2}.png"/> <img src="c{Ban3}.png"/> </td>
+					</tr>
+					<tr> 
+						<td>Most Picked</td>
+						<td><img src="c{Pick}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Summoner Spells</td>
+						<td><img src="s{Spell1}.png"/> <img src="s{Spell2}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Items</td>
+						<td> TODO </td>
+					</tr>
+					<tr> 
+						<td>Average Creep Score</td>
+						<td>{CS}</td>
+					</tr>
+					<tr> 
+						<td>Average Gold</td>
+						<td>{Gold}</td>
+					</tr>
+					<tr> 
+						<td>Average Wards Placed</td>
+						<td>{Wards}</td>
+					</tr>
+					<tr> 
+						<td>Average KDA</td>
+						<td>{Kills}/{Deaths}/{Assists}</td>
+					</tr>
+					<tr> 
+						<td>Average Dragons</td>
+						<td>{Dragons}</td>
+					</tr>
+					<tr> 
+						<td>Average Barons</td>
+						<td>{Barons}</td>
+					</tr>
+					<tr> 
+						<td>Average Double Kills</td>
+						<td>{Double Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Triple Kills</td>
+						<td>{Triple Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Quadra Kills</td>
+						<td>{Quadra Kills}</td>
+					</tr> 
+					<tr> 
+						<td>Average Penta Kills</td>
+						<td>{Penta Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Largest Killing Spree</td>
+						<td>{Largest Killing Spree}</td>
+					</tr>
+				</table>
+			</div>
+			<div id="goldStats">
+				<div class="leagueButton" onclick="toggleBtn('goldStats')">			
+					<img class="leagueIcon" src="Gold.png"/> GOLD
 				</div>
-				<div id="silverStats">
-					<div class="leagueButton" onclick="toggleBtn('silverStats')">
-						<img class="leagueIcon" src="Silver.png"/> SILVER
-					</div>
-					<table class="statTable">
-						<tr> 
-							<td>Average Score</td>
-							<td>{Score}</td>
-						</tr>
-						<tr> 
-							<td>Most Banned</td>
-							<td><img class="Icons" src="c{TopBan1}.png"/> <img class="Icons" src="c{TopBan2}.png"/> <img class="Icons" src="c{TopBan3}.png"/> </td>
-						</tr>
-						<tr> 
-							<td>Most Picked</td>
-							<td><img class="Icons" src="c{TopPick}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Summoner Spells</td>
-							<td><img class="Icons" src="s{TopSpell1}.png"/> <img class="Icons" src="s{TopSpell2}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Items</td>
-							<td>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem1}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem2}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem3}.png"/>
-							</td>
-						</tr>
-						<tr> 
-							<td>Average KDA</td>
-							<td>{Kills}/{Deaths}/{Assists}</td>
-						</tr>
-						<tr> 
-							<td>Average Creep Score</td>
-							<td>{CS}</td>
-						</tr>
-						<tr> 
-							<td>Average Gold</td>
-							<td>{Gold}</td>
-						</tr>
-						<tr> 
-							<td>Average Wards Placed</td>
-							<td>{Wards}</td>
-						</tr>
-						<tr> 
-							<td>Average Dragons</td>
-							<td>{Dragons}</td>
-						</tr>
-						<tr> 
-							<td>Average Barons</td>
-							<td>{Barons}</td>
-						</tr>
-						<tr> 
-							<td>Average Double Kills</td>
-							<td>{Doubles}</td>
-						</tr>
-						<tr> 
-							<td>Average Triple Kills</td>
-							<td>{Triples}</td>
-						</tr>
-						<tr> 
-							<td>Average Quadra Kills</td>
-							<td>{Quadras}</td>
-						</tr> 
-						<tr> 
-							<td>Average Penta Kills</td>
-							<td>{Pentas}</td>
-						</tr>
-						<tr> 
-							<td>Average Largest Killing Spree</td>
-							<td>{Spree}</td>
-						</tr>
-					</table>
+				<table class="statTable">
+					<tr> 
+						<td>Average Score</td>
+						<td>{score}</td>
+					</tr>
+					<tr> 
+						<td>Most Banned</td>
+						<td><img src="c{Ban1}.png"/> <img src="c{Ban2}.png"/> <img src="c{Ban3}.png"/> </td>
+					</tr>
+					<tr> 
+						<td>Most Picked</td>
+						<td><img src="c{Pick}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Summoner Spells</td>
+						<td><img src="s{Spell1}.png"/> <img src="s{Spell2}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Items</td>
+						<td> TODO </td>
+					</tr>
+					<tr> 
+						<td>Average Creep Score</td>
+						<td>{CS}</td>
+					</tr>
+					<tr> 
+						<td>Average Gold</td>
+						<td>{Gold}</td>
+					</tr>
+					<tr> 
+						<td>Average Wards Placed</td>
+						<td>{Wards}</td>
+					</tr>
+					<tr> 
+						<td>Average KDA</td>
+						<td>{Kills}/{Deaths}/{Assists}</td>
+					</tr>
+					<tr> 
+						<td>Average Dragons</td>
+						<td>{Dragons}</td>
+					</tr>
+					<tr> 
+						<td>Average Barons</td>
+						<td>{Barons}</td>
+					</tr>
+					<tr> 
+						<td>Average Double Kills</td>
+						<td>{Double Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Triple Kills</td>
+						<td>{Triple Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Quadra Kills</td>
+						<td>{Quadra Kills}</td>
+					</tr> 
+					<tr> 
+						<td>Average Penta Kills</td>
+						<td>{Penta Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Largest Killing Spree</td>
+						<td>{Largest Killing Spree}</td>
+					</tr>
+				</table>
+			</div>
+			<div id="silverStats">
+				<div class="leagueButton" onclick="toggleBtn('silverStats')">
+					<img class="leagueIcon" src="Silver.png"/> SILVER
 				</div>
-				<div id="bronzeStats"> 
-					<div class="leagueButton" onclick="toggleBtn('bronzeStats')">
-						<img class="leagueIcon" src="Bronze.png"/> BRONZE
-					</div>
-					<table class="statTable">
-						<tr> 
-							<td>Average Score</td>
-							<td>{Score}</td>
-						</tr>
-						<tr> 
-							<td>Most Banned</td>
-							<td><img class="Icons" src="c{TopBan1}.png"/> <img class="Icons" src="c{TopBan2}.png"/> <img class="Icons" src="c{TopBan3}.png"/> </td>
-						</tr>
-						<tr> 
-							<td>Most Picked</td>
-							<td><img class="Icons" src="c{TopPick}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Summoner Spells</td>
-							<td><img class="Icons" src="s{TopSpell1}.png"/> <img class="Icons" src="s{TopSpell2}.png"/></td>
-						</tr>
-						<tr> 
-							<td>Most Popular Items</td>
-							<td>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem1}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem2}.png"/>
-								<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem3}.png"/>
-							</td>
-						</tr>
-						<tr> 
-							<td>Average KDA</td>
-							<td>{Kills}/{Deaths}/{Assists}</td>
-						</tr>
-						<tr> 
-							<td>Average Creep Score</td>
-							<td>{CS}</td>
-						</tr>
-						<tr> 
-							<td>Average Gold</td>
-							<td>{Gold}</td>
-						</tr>
-						<tr> 
-							<td>Average Wards Placed</td>
-							<td>{Wards}</td>
-						</tr>
-						<tr> 
-							<td>Average Dragons</td>
-							<td>{Dragons}</td>
-						</tr>
-						<tr> 
-							<td>Average Barons</td>
-							<td>{Barons}</td>
-						</tr>
-						<tr> 
-							<td>Average Double Kills</td>
-							<td>{Doubles}</td>
-						</tr>
-						<tr> 
-							<td>Average Triple Kills</td>
-							<td>{Triples}</td>
-						</tr>
-						<tr> 
-							<td>Average Quadra Kills</td>
-							<td>{Quadras}</td>
-						</tr> 
-						<tr> 
-							<td>Average Penta Kills</td>
-							<td>{Pentas}</td>
-						</tr>
-						<tr> 
-							<td>Average Largest Killing Spree</td>
-							<td>{Spree}</td>
-						</tr>
-					</table>  
+				<table class="statTable">
+					<tr> 
+						<td>Average Score</td>
+						<td>{score}</td>
+					</tr>
+					<tr> 
+						<td>Most Banned</td>
+						<td><img src="c{Ban1}.png"/> <img src="c{Ban2}.png"/> <img src="c{Ban3}.png"/> </td>
+					</tr>
+					<tr> 
+						<td>Most Picked</td>
+						<td><img src="c{Pick}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Summoner Spells</td>
+						<td><img src="s{Spell1}.png"/> <img src="s{Spell2}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Items</td>
+						<td> TODO </td>
+					</tr>
+					<tr> 
+						<td>Average Creep Score</td>
+						<td>{CS}</td>
+					</tr>
+					<tr> 
+						<td>Average Gold</td>
+						<td>{Gold}</td>
+					</tr>
+					<tr> 
+						<td>Average Wards Placed</td>
+						<td>{Wards}</td>
+					</tr>
+					<tr> 
+						<td>Average KDA</td>
+						<td>{Kills}/{Deaths}/{Assists}</td>
+					</tr>
+					<tr> 
+						<td>Average Dragons</td>
+						<td>{Dragons}</td>
+					</tr>
+					<tr> 
+						<td>Average Barons</td>
+						<td>{Barons}</td>
+					</tr>
+					<tr> 
+						<td>Average Double Kills</td>
+						<td>{Double Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Triple Kills</td>
+						<td>{Triple Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Quadra Kills</td>
+						<td>{Quadra Kills}</td>
+					</tr> 
+					<tr> 
+						<td>Average Penta Kills</td>
+						<td>{Penta Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Largest Killing Spree</td>
+						<td>{Largest Killing Spree}</td>
+					</tr>
+				</table>
+			</div>
+			<div id="bronzeStats"> 
+				<div class="leagueButton" onclick="toggleBtn('bronzeStats')">
+					<img class="leagueIcon" src="Bronze.png"/> BRONZE
 				</div>
+				<table class="statTable">
+					<tr> 
+						<td>Average Score</td>
+						<td>{score}</td>
+					</tr>
+					<tr> 
+						<td>Most Banned</td>
+						<td><img src="c{Ban1}.png"/> <img src="c{Ban2}.png"/> <img src="c{Ban3}.png"/> </td>
+					</tr>
+					<tr>
+						<td>Most Picked</td>
+						<td><img src="c{Pick}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Summoner Spells</td>
+						<td><img src="s{Spell1}.png"/> <img src="s{Spell2}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Items</td>
+						<td> TODO </td>
+					</tr>
+					<tr> 
+						<td>Average Creep Score</td>
+						<td>{CS}</td>
+					</tr>
+					<tr> 
+						<td>Average Gold</td>
+						<td>{Gold}</td>
+					</tr>
+					<tr> 
+						<td>Average Wards Placed</td>
+						<td>{Wards}</td>
+					</tr>
+					<tr> 
+						<td>Average KDA</td>
+						<td>{Kills}/{Deaths}/{Assists}</td>
+					</tr>
+					<tr> 
+						<td>Average Dragons</td>
+						<td>{Dragons}</td>
+					</tr>
+					<tr> 
+						<td>Average Barons</td>
+						<td>{Barons}</td>
+					</tr>
+					<tr> 
+						<td>Average Double Kills</td>
+						<td>{Double Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Triple Kills</td>
+						<td>{Triple Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Quadra Kills</td>
+						<td>{Quadra Kills}</td>
+					</tr> 
+					<tr> 
+						<td>Average Penta Kills</td>
+						<td>{Penta Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Largest Killing Spree</td>
+						<td>{Largest Killing Spree}</td>
+					</tr>
+				</table>  
 			</div>
 			<div id="refreshButton">
 				<div id="imgDiv">
@@ -414,75 +392,65 @@
 					</select>
 					<button id="searchButton" type="button"><img src="search.png"/></button>
 			</div></br></br>
-				<div id="playerStats"> 
-					<table id="playerStattable">
-						<tr> 
-								<td>Average Score</td>
-								<td>{Score}</td>
-							</tr>
-							<tr> 
-								<td>Most Picked</td>
-								<td><img class="Icons" src="c{playerTopPick}.png"/></td>
-							</tr>
-							<tr> 
-								<td>Most Popular Summoner Spells</td>
-								<td><img class="Icons" src="s{playerTopSpell1}.png"/> <img class="Icons" src="s{playerTopSpell2}.png"/></td>
-							</tr>
-							<tr> 
-								<td>Most Popular Items</td>
-								<td>
-									<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem1}.png"/>
-									<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem2}.png"/>
-									<img class="Icons" src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{PopItem3}.png"/>
-								</td>
-							</tr>
-							<tr> 
-								<td>Average KDA</td>
-								<td>{playerKills}/{playerDeaths}/{playerAssists}</td>
-							</tr>
-							<tr> 
-								<td>Average Creep Score</td>
-								<td>{playerCS}</td>
-							</tr>
-							<tr> 
-								<td>Average Gold</td>
-								<td>{playerGold}</td>
-							</tr>
-							<tr> 
-								<td>Average Wards Placed</td>
-								<td>{playerWards}</td>
-							</tr>
-							<tr> 
-								<td>Average Dragons</td>
-								<td>{playerDragons}</td>
-							</tr>
-							<tr> 
-								<td>Average Barons</td>
-								<td>{playerBarons}</td>
-							</tr>
-							<tr> 
-								<td>Average Double Kills</td>
-								<td>{playerDoubles}</td>
-							</tr>
-							<tr> 
-								<td>Average Triple Kills</td>
-								<td>{playerTriples}</td>
-							</tr>
-							<tr> 
-								<td>Average Quadra Kills</td>
-								<td>{playerQuadras}</td>
-							</tr> 
-							<tr> 
-								<td>Average Penta Kills</td>
-								<td>{playerPentas}</td>
-							</tr>
-							<tr> 
-								<td>Average Largest Killing Spree</td>
-								<td>{playerSpree}</td>
-							</tr>
-					</table>  
-				</div>
-			<div id="belongLeagueDiv">You Belong In <span id="belongLeague" class="very_big_and_classy"></span>!</div>
+			<div id="playerStats"> 
+				<table id="playerStattable">
+					<tr> 
+						<td>Average Score</td>
+						<td>{playerScore}</td>
+					</tr>
+					<tr> 
+						<td>Most Banned</td>
+						<td><img src="c{playerBan1}.png"/> <img src="c{playerBan2}.png"/> <img src="c{playerBan3}.png"/> </td>
+					</tr>
+					<tr>
+						<td>Most Picked</td>
+						<td><img src="c{playerPick}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Summoner Spells</td>
+						<td><img src="s{playerSpell1}.png"/> <img src="s{playerSpell2}.png"/></td>
+					</tr>
+					<tr> 
+						<td>Most Popular Items</td>
+						<td> TODO </td>
+					</tr>
+					<tr> 
+						<td>Average Creep Score</td>
+						<td>{playerCS}</td>
+					</tr>
+					<tr> 
+						<td>Average Gold</td>
+						<td>{playerGold}</td>
+					</tr>
+					<tr> 
+						<td>Average Wards Placed</td>
+						<td>{playerWards}</td>
+					</tr>
+					<tr> 
+						<td>Average KDA</td>
+						<td>{playerKills}/{playerDeaths}/{playerAssists}</td>
+					</tr>
+					<tr> 
+						<td>Average Double Kills</td>
+						<td>{playerDouble Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Triple Kills</td>
+						<td>{playerTriple Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Quadra Kills</td>
+						<td>{playerQuadra Kills}</td>
+					</tr> 
+					<tr> 
+						<td>Average Penta Kills</td>
+						<td>{playerPenta Kills}</td>
+					</tr>
+					<tr> 
+						<td>Average Largest Killing Spree</td>
+						<td>{playerLargest Killing Spree}</td>
+					</tr>
+				</table>  
 			</div>
 		</div>
 	</body>
