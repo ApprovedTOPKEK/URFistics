@@ -34,7 +34,7 @@ span{
 #platinumStats{
 	background-color: #e7c047;
 	padding: none; 
-	position: relative;
+	position: fixed;
 	border: 1px solid #9c8335;
 	box-shadow: 10px 10px 5px #4f4c4c;
 }
@@ -54,26 +54,27 @@ span{
 }
 #bronzeStats{
 	background-color: #e7c047;
-	border-radius: 0px 0px 25px 0px;
+	border-radius: 0px 0px 25px 25px;
 	padding: none;
 	position: relative;
 	border: 1px solid #9c8335;
-	box-shadow: 10px 10px 5px #4f4c4c;
+	box-shadow: 10px 10px 5px #4f4c4c;	
 }
 .statTable{
-	position: relative;
+	position: relative; 
 	width: 100%;
 	border-collapse: collapse;
+	float: top-left;
+	z-index: 1;
 }
 td{
 	font-family: Impact;
 	color: #d8d2d2;
 	text-align: left;
-	border: 1px solid #d8d2d2;
 	width: 100%;
 	padding: 0.5em;
 	background-color: #ec2b2b;
-	box-shadow: 10px 10px 5px #4f4c4c;
+	border: 1px solid #d8d2d2;
 }	
 .leagueButton{
 	font-family: Impact;
@@ -89,23 +90,25 @@ td{
 	color: #a5b80c;
 	background-color: #239013;
 	width: 20%;
-	border-radius: 0px 0px 10px 10px; 
+	border-radius: 0px 0px 10px 10px;
+	z-index: 100;
+	float: left;
+	padding: 0.5em;
 }
 #refreshText{
 	position: inline-block;
 	float: right; 
 	padding: 0em;
 	font-size: 1.5em;
-	text-align: center; 
+	text-align: center;	
 }
 #refreshImg{
 	height: 20%; 
 	width: 20%;
 	padding: 0.25em;
-	text-align: left;
 }
 #imgDiv{
-	text-align: left; 
+	float: left; 
 }
 #background {
     position: fixed;
@@ -173,7 +176,7 @@ td{
 	margin: none;
 	box-shadow: 10px 10px 5px #4f4c4c;
 }
-#playerStats{
+#profileSection{
 	float: right; 
 	width: 45%;
 }
@@ -182,4 +185,19 @@ td{
 	width: 100%;
 	border-collapse: collapse;
 	box-shadow: 10px 10px 5px #4f4c4c;
+}
+.Icons{
+	width: 40px;
+	height: 40px;
+	padding: 0.25em;
+}
+#belongLeagueDiv{
+	font-family: Impact;
+	color: #384185;	
+	font-size: 3em; 
+}
+#belongLeague{
+	font-family: Impact; 
+	color: 3557ff; 
+	font-size: 5em; 
 }
