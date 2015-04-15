@@ -9,9 +9,11 @@
 
 //Set "return" variable in get to avoid problems with other scripts
 $_GET['return'] = "false";
+$regions = query("SELECT `ID`, `Region` FROM regions");
 
-include "../LeagueStats.php";
-include "../PlayerStats.php";
+include "LeagueStats.php";
+include "PlayerStats.php";
 
+include "Templates/Pages/cptma.phtml";
 
 ?>

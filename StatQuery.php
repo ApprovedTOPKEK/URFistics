@@ -8,8 +8,8 @@ function statquery($_region, $_mode, $_userid, $_league){
 	$query = "	SELECT * FROM
 				(
 					SELECT
-						AVG(Score) AS Score,
-						AVG(Kills) AS Kills,
+						COALESCE(AVG(Score), 0) AS Score,
+						COALESCE(AVG(Kills), 0) AS Kills,
 						AVG(Deaths) AS Deaths,
 						AVG(Assists) AS Assists,
 						AVG(Wards) AS Wards,
@@ -94,7 +94,75 @@ function statquery($_region, $_mode, $_userid, $_league){
 				) AS y2
 				ON(y4.TopSpell1 < y2.TopSPell2)
 				) LIMIT 1
-				) AS t3;";
+				) AS t3
+"
+	/*"				JOIN
+
+				SELECT PopItem1, PopItem2, PopItem3 FROM
+				(
+				(SELECT PopItem1 FROM
+					(SELECT Item0 AS PopItem1"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item1"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item2"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item3"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item4"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item5"
+						. from($_region, $_mode, $_userid, $_league)
+					. ") AS z3
+					GROUP BY PopItem1
+					HAVING PopItem1>0
+					ORDER BY COUNT(PopItem1) DESC
+				) AS z4
+				LEFT JOIN
+				(SELECT PopItem2 FROM
+					(SELECT Item1 AS PopItem2"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item0"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item2"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item3"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item4"
+						. from($_region, $_mode, $_userid, $_league)
+						. " UNION ALL SELECT Item5"
+						. from($_region, $_mode, $_userid, $_league)
+					. ") AS z1
+					GROUP BY PopItem2
+					HAVING PopItem2>0
+					ORDER BY COUNT(PopItem2) DESC
+				) AS z2
+				ON(z4.PopItem1 < z2.PopItem2)
+				LEFT JOIN
+				(SELECT PopItem3 FROM
+					(SELECT Item2 AS PopItem3"
+		 .from($_region, $_mode, $_userid, $_league)
+		 . " UNION ALL SELECT Item0"
+		 . from($_region, $_mode, $_userid, $_league)
+		 . " UNION ALL SELECT Item1"
+		 . from($_region, $_mode, $_userid, $_league)
+		 . " UNION ALL SELECT Item3"
+		 . from($_region, $_mode, $_userid, $_league)
+		 . " UNION ALL SELECT Item4"
+		 . from($_region, $_mode, $_userid, $_league)
+		 . " UNION ALL SELECT Item5"
+		 . from($_region, $_mode, $_userid, $_league)
+		. ") AS z5
+					GROUP BY PopItem3
+					HAVING PopItem3>0
+					ORDER BY COUNT(PopItem3) DESC
+				) AS z6
+				ON(z2.PopItem2 < z6.PopItem3)
+				) LIMIT 1
+				) AS t7
+
+				"*/
+				.highestJoin("Pick", "TopPick", $_region, $_mode, $_userid, $_league, "t4");
 				//.highestJoin("Ban1", $_region, $_mode, $_userid, $_league, "t2")
 				//.highestJoin("Ban2", $_region, $_mode, $_userid, $_league, "t3")
 				//.highestJoin("Ban3", $_region, $_mode, $_userid, $_league, "t4")
@@ -107,9 +175,9 @@ function statquery($_region, $_mode, $_userid, $_league){
 }
 
 
-function highestJoin($column, $r, $m, $uid, $l, $t){
+function highestJoin($column, $alias, $r, $m, $uid, $l, $t){
 	global $settings;
-	return " JOIN(SELECT ".$column." FROM statistics ".whereClause($r, $m, $uid, $l)." GROUP BY ".$column." HAVING COUNT(".$column.") > 1) AS ".$t;
+	return " JOIN(SELECT ".$column." AS ".$alias." FROM statistics ".whereClause($r, $m, $uid, $l)." GROUP BY ".$column." HAVING COUNT(".$column.") > 1) AS ".$t;
 }
 function whereClause($rg, $m, $uid, $l){
 	$q = "WHERE `Region` = ".$rg." AND `Gamemode` = ".$m;

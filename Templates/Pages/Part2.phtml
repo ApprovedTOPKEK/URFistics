@@ -1,0 +1,79 @@
+<div id="profileSection">
+	<?php if (!$verifiedUser){ ?><div id="topText">&#8643; Compare YOUR Score Here &#8642;</div><?php } ?>
+	</br></br>
+	<div id="bar" <?php if ($verifiedUser){ ?>class="verifiedBar"<?php }?> >
+		<input id="inputBar" type="text" placeholder="Summoner Name" <?php if ($verifiedUser){ ?>value="<?php echo $playerStats['Summoner']['name']; ?>"<?php } ?>/>
+		<select id="regionSelector" >
+			<?php foreach ($regions as $region) { ?>
+				<option value="<?php echo $region['ID']; ?>"><?php echo $region['Region']; ?></option>
+			<?php } ?>
+		</select>
+		<button id="searchButton" type="button" onclick="searchSummoner();"><img src="images/search.png"/></button>
+	</div>
+	</br></br>
+	<div id="playerStats">
+		<?php if ($verifiedUser) { ?>
+		<table id="playerStattable">
+			<tr>
+				<td>Average Score</td>
+				<td id="ps"><?php echo round($playerStats['Score'], 1); ?></td>
+			</tr>
+			<tr>
+				<td>Most Picked</td>
+				<td><img class="champ" src="images/c<?php echo $playerStats['TopPick']; ?>.png"/></td>
+			</tr>
+			<tr>
+				<td>Most Popular Summoner Spells</td>
+				<td><img class="spell" src="images/s<?php echo $playerStats['TopSpell1']; ?>.png"/> <img class="spell" src="images/s<?php echo $playerStats['TopSpell2']; ?>.png"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Most Popular Items</td>
+				<td> TODO</td>
+			</tr>
+			<tr>
+				<td>Average Creep Score</td>
+				<td><?php echo round($playerStats['CS']); ?></td>
+			</tr>
+			<tr>
+				<td>Average Gold</td>
+				<td><?php echo round($playerStats['Gold']); ?></td>
+			</tr>
+			<tr>
+				<td>Average Wards Placed</td>
+				<td><?php echo round($playerStats['Wards']); ?></td>
+			</tr>
+			<tr>
+				<td>Average KDA</td>
+				<td><?php echo round($playerStats['Kills'], 1); ?>/<?php echo round($playerStats['Deaths'], 1); ?>
+					/<?php echo round($playerStats['Assists'], 1); ?></td>
+			</tr>
+			<tr>
+				<td>Average Double Kills</td>
+				<td><?php echo $playerStats['Doubles']; ?></td>
+			</tr>
+			<tr>
+				<td>Average Triple Kills</td>
+				<td><?php echo round($playerStats['Triples']); ?></td>
+			</tr>
+			<tr>
+				<td>Average Quadra Kills</td>
+				<td><?php echo round($playerStats['Quadras']); ?></td>
+			</tr>
+			<tr>
+				<td>Average Penta Kills</td>
+				<td><?php echo round($playerStats['Pentas']); ?></td>
+			</tr>
+			<tr>
+				<td>Average Largest Killing Spree</td>
+				<td><?php echo round($playerStats['Spree']); ?></td>
+			</tr>
+		</table>
+			<br/><br/><br/>
+		<div id="comparison">
+			<span class="comp">You belong in </span><span id="var" class="comp"></span><span class="comp">!</span>
+		</div>
+		<?php } ?>
+		<img src="images/loadingGIF.gif" id="loading" />
+	</div>
+</div>

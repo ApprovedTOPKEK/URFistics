@@ -1,0 +1,107 @@
+<div id='stats'>
+
+	<?php foreach ($ls_leagues as $index => $league) {
+		if (strtolower($ls_leagues[$index]['League']) == "master") continue; ?>
+		<div class="specific" id="<?php echo strtolower($ls_leagues[$index]['League']); ?>Stats">
+			<div class='leagueButton'
+			     onclick="toggleBtn('<?php echo strtolower($ls_leagues[$index]['League']); ?>Stats')">
+				<img class='leagueIcon' src='images/<?php echo $ls_leagues[$index]['League']; ?>.png'/>
+				<span class='fancyText'><?php echo strtoupper($ls_leagues[$index]['League']); ?></span>
+			</div>
+			<table class='statTable'>
+				<tr>
+					<td>Average Score</td>
+					<td class="as"><?php echo empty($data[$ls_leagues[$index]['ID']]['Score']) ? "No data yet" : round($data[$ls_leagues[$index]['ID']]['Score'], 0); ?></td>
+				</tr>
+				<tr>
+					<td>Most Banned</td>
+					<td><img class='champ'
+					         src='images/c<?php echo empty($data[$ls_leagues[$index]['ID']]['TopBan1']) ? 0 : $data[$ls_leagues[$index]['ID']]['TopBan1']; ?>.png'/><img
+							class='champ'
+							src='images/c<?php echo empty($data[$ls_leagues[$index]['ID']]['TopBan2']) ? 0 : $data[$ls_leagues[$index]['ID']]['TopBan2']; ?>.png'/><img
+							class='champ'
+							src='images/c<?php echo empty($data[$ls_leagues[$index]['ID']]['TopBan3']) ? 0 : $data[$ls_leagues[$index]['ID']]['TopBan3']; ?>.png''
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td>Most Picked</td>
+					<td><img class='champ'
+					         src='images/c<?php echo $data[$ls_leagues[$index]['ID']]['TopPick']; ?>.png'/></td>
+				</tr>
+				<tr>
+					<td>Most Popular Summoners</td>
+					<td><img class='spell '
+					         src='images/s<?php echo $data[$ls_leagues[$index]['ID']]['TopSpell1']; ?>.png'/><img
+							class='spell'
+							src='images/s<?php echo $data[$ls_leagues[$index]['ID']]['TopSpell2']; ?>.png'/></td>
+				<tr>
+					<td>Most Popular Items</td>
+					<td>
+						<img class='Icons'
+						     src='http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem1']; ?>.png'/>
+						<img class='Icons'
+						     src='http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem2']; ?>.png'/>
+						<img class='Icons'
+						     src='http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem3']; ?>.png'/>
+					</td>
+				</tr>
+				<tr>
+					<td>Average KDA</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Kills'], 2) . "/" . round($data[$ls_leagues[$index]['ID']]['Deaths'], 2) . "/" . round($data[$ls_leagues[$index]['ID']]['Assists'], 2); ?></td>
+				</tr>
+				<tr>
+					<td>Average Creep Score</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['CS'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average Gold</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Gold'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average Wards Placed</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Wards'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average Dragons</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Dragons'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average Barons</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Barons'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Highest-Killing-Spree Average</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Spree'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average Doubles</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Doubles'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average Triples</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Triples'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average Quadras</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Quadras'], 1); ?></td>
+				</tr>
+				<tr>
+					<td>Average PENTAs</td>
+					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Pentas'], 1); ?></td>
+				</tr>
+			</table>
+		</div>
+	<?php } ?>
+	<!--<div id="refreshButton">
+		<div id="imgDiv">
+			<img id="refreshImg" src="images/refresh.png"/>
+
+			<div id="refreshText">Refresh</div>
+		</div>
+	</div>-->
+</div>
+<script>
+	hideTables();
+</script>
+</div>

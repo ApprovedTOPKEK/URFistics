@@ -1,10 +1,9 @@
 h1{
 	font-family: Impact;
 	font-weight: bold;
-	color: #c71f1f;
+	color: #ffffff;
 	text-align: center;
-	font-size: 3em; 
-	text-shadow: 10px 10px 5px #4f4c4c;
+	font-size: 3em;
 }
 span{
 	font-family: "Helvetica";
@@ -84,7 +83,6 @@ td{
 	color: #d8d2d2;
 	text-align: left;
 	border: 1px solid #d8d2d2;
-	width: 100%;
 	padding: 0.5em;
 	background-color: #ec2b2b;
 	box-shadow: 10px 10px 5px #4f4c4c;
@@ -205,4 +203,30 @@ td{
 .spell {
     width: 45px;
     height: 45px;
+}
+
+#loading {
+    display: none;
+}
+
+#footer {
+    clear: both;
+    text-align: center;
+
+}
+
+.verifiedBar {
+
+}
+
+.comp {
+    font-family: Impact;
+    color: #384185;
+    font-size: 2em;
+}
+#var {
+    font-style: italic;
+    font-family: Impact;
+    color: #384185;
+    font-size: 3em;
 }

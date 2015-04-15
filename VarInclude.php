@@ -3,12 +3,12 @@
 //Include database if not already done so
 include_once "Database.php";
 
+//API-KEY
+$apiKey = include 'apikey.php';
+
 //Include settings if not already done so
 $settings = array();
 updateSettings();
-
-//API-KEY
-$apiKey = include 'apikey.php';
 
 //Check if it is time to fetch new games & fetch 'em
 include 'DataProcessor.php';
@@ -23,7 +23,6 @@ function cURLRequest($link){
 	$data = curl_exec($ch);
 	$info = curl_getinfo($ch);
 	curl_close($ch);
-	echo $info['http_code'];
 	if($info['http_code'] == 429){
 		sleep(1);
 		return cURLRequest($link);
@@ -34,13 +33,13 @@ function cURLRequest($link){
 	return $data;
 }
 
-function calcScore($k, $d, $a, $cs, $dragons, $barons, $largestKillingSpree){
-	return 30*$k - 40*$d + 25*$a + $cs + 100*$dragons + 150*$barons + 5*$largestKillingSpree;
+function calcScore($k, $d, $a, $cs, $dragons, $barons, $largestKillingSpree, $wards){
+	return 30*$k - 40*$d + 27*$a + $cs + 10*$wards + 100*$dragons + 150*$barons + 5*$largestKillingSpree; //Calculate this in a more meaningful way
 }
 
 function updateSettings(){
 	global $settings, $conn;
-	$rs = $conn->query("SELECT Setting, `Value` FROM Settings");
+	$rs = $conn->query("SELECT `Setting`, `Value` FROM Settings;");
 	$arr = array();
 	while($row = $rs->fetch_assoc()){
 		$arr[$row['Setting']] = $row['Value'];
@@ -50,14 +49,17 @@ function updateSettings(){
 
 function saveGame($participant, $match, $uid, $r){
 	global $conn;
+	$gm = query("SELECT id FROM Gamemodes WHERE Gamemode='".$match['queueType']."';");
+	if(empty($gm)) return;
+	if(empty($participant['highestAchievedSeasonTier'])) return;
 	$team = $participant['teamId'];
 	$league = $participant['highestAchievedSeasonTier'];
 	$champ = $participant['championId'];
 	$sumSpell1 = $participant['spell1Id'];
 	$sumSpell2 = $participant['spell2Id'];
-	$ban1 = $match['teams'][$team==100?0:1]['bans'][0]['championId'];
-	$ban2 = $match['teams'][$team==100?0:1]['bans'][1]['championId'];
-	$ban3 = $match['teams'][$team==100?0:1]['bans'][2]['championId'];
+	$ban1 = isset($match['teams'][$team==100?0:1]['bans'][0])?$match['teams'][$team==100?0:1]['bans'][0]['championId']:-1;
+	$ban2 = isset($match['teams'][$team==100?0:1]['bans'][1])?$match['teams'][$team==100?0:1]['bans'][1]['championId']:-1;
+	$ban3 = isset($match['teams'][$team==100?0:1]['bans'][2])?$match['teams'][$team==100?0:1]['bans'][2]['championId']:-1;
 	$item0 = $participant['stats']['item0'];
 	$item1 = $participant['stats']['item1'];
 	$item2 = $participant['stats']['item2'];
@@ -77,9 +79,8 @@ function saveGame($participant, $match, $uid, $r){
 	$largestKillingSpree = $participant['stats']['largestKillingSpree'];
 	$dragons = $match['teams'][$team==100?0:1]['dragonKills'];
 	$barons = $match['teams'][$team==100?0:1]['baronKills'];
-	$score = calcScore($kills, $deaths, $assists, $cs, $dragons, $barons, $largestKillingSpree);
-	$gm = query("SELECT id FROM Gamemodes WHERE Gamemode='".$match['queueType']."';");
-	$l = query("SELECT id FROM Leagues WHERE League='".$league."';");
+	$score = calcScore($kills, $deaths, $assists, $cs, $dragons, $barons, $largestKillingSpree, $wards);
+	$l = query("SELECT id, League FROM Leagues WHERE League='".$league."';");
 	$iq = "REPLACE INTO statistics (MatchId, Region, Gamemode, League, UserId, Score, Ban1, Ban2, Ban3, Pick, Spell1, Spell2, Item0, Item1, Item2, Item3, Item4, Item5, Kills, Deaths, Assists, Wards, Gold, CS, Doubles, Triples, Quadras, Pentas, LargestSpree, Drakes, Barons)"
 		." VALUES ('"
 		.$match['matchId']."', '"

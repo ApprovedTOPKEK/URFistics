@@ -13,12 +13,10 @@ include_once "VarInclude.php";
 include 'Templates/Header.php';
 
 //Include the HTML Code of the page the user wants to see (Body) CONTAINS PHP CODE
-if(isset($_GET['page']) && file_exists("Scripts/Pages/".$_GET['page'].".php") && file_exists("Templates/Pages/".$_GET['page'].".php")){
-	include 'Scripts/Pages/'.$_GET['page'].".php";
-	include 'Templates/Pages/'.$_GET['page'].".php";
+if(isset($_GET['page']) && file_exists("page".$_GET['page'].".php")){
+	include "page".$_GET['page'].".php";
 }else{
-	include 'Scripts/Pages/'.$settings['defaultPage'].".php";
-	include 'Templates/Pages/'.$settings['defaultPage'].".php";
+	include 'page'.$settings['defaultPage'].".php";
 }
 
 //Include the last part of the HTML Code: Footer (After body) CONTAINS PHP CODE

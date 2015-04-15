@@ -18,11 +18,6 @@ $ls_region = isset($_GET['region']) ? $_GET['region'] : $settings['defaultRegion
 //Selected gamemode
 $ls_gameMode = isset($_GET['gamemode']) ? $_GET['gamemode'] : $settings['defaultGamemode'];
 
-//UNUSED
-/*//Get structure of data-table to help build the query statement
-$vanilla_select = query("SELECT * FROM (SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='".$dbName."' AND `TABLE_NAME`='".$dataTableName."') AS t1 WHERE COLUMN_NAME LIKE 'v_%';");
-$avg_select = query("SELECT * FROM (SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='".$dbName."' AND `TABLE_NAME`='".$dataTableName."') AS t1 WHERE COLUMN_NAME LIKE 'v_%';");*/
-
 //Table array used by view
 $data = array();
 
@@ -36,5 +31,6 @@ foreach($ls_leagues as $index => $league){
 //Return as JSON?
 if(isset($_GET['return']) && $_GET['return'] == "json") echo json_encode($data);
 
+//$data[$ls_leagues[$index]['ID']]
 
 ?>
