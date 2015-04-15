@@ -54,7 +54,14 @@ span{
 }
 #bronzeStats{
 	background-color: #e7c047;
-	border-radius: 0px 0px 25px 0px;
+	padding: none;
+	position: relative;
+	border: 1px solid #9c8335;
+	box-shadow: 10px 10px 5px #4f4c4c;
+}
+#unrankedStats{
+	background-color: #e7c047;
+	border-radius: 0px 0px 25px 25px;
 	padding: none;
 	position: relative;
 	border: 1px solid #9c8335;
