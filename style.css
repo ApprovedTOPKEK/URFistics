@@ -253,3 +253,50 @@ hr:after {
     color: #fff690;
     font-size: 2em;
 }
+#leaderboards{
+	float: left;
+	width: 45%;
+	background-color: #aaac84;
+	border-radius: 10px 10px 10px 10px;
+	border: 5px solid #314159;
+}
+.players{
+	border: 2px solid #314159;
+}
+.number{
+	font-family: Impact; 
+	font-weight: bold; 
+	font-size: 2em;
+	color: #314159;
+	float: left;
+	font-style: normal;
+	text-decoration:none; 
+}
+.topPlayerstyle{
+	text-align: center; 
+}
+.playerStyle{
+	font-family: Impact; 
+	font-weight: bold; 
+	font-size: 2em;
+	color: #314159;
+	display: inline-block; 
+	text-align: center;
+}
+.scoreStyle{
+	font-family: Impact; 
+	font-weight: bold; 
+	font-size: 2em;
+	color: #314159;
+	float: right;
+	display: inline-block; 
+}
+.viewStats{ 
+	font-size: 1em;
+	color: #314159;
+	background-color: #7f7f7f;
+}
+#table{
+	float: right; 
+	width: 45%;
+}
