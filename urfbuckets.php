@@ -1,21 +1,19 @@
 <?php
 include_once 'VarInclude.php';
-$st = '1427915100';
+$st = $settings['urfbucketstime'];
 $b = array();
 
-foreach ($regions as $r) {
-set_time_limit(600);
 while($st < (1428926400-30*3000)){
-	$sql = "https://" . $r['Region'] . ".api.pvp.net/api/lol/" . strtolower($r['Region']) . "/v4.1/game/ids?api_key=" . $apiKey . "&beginDate=".$st;
-	$matchCurl = cURLRequest($sql);
-	$matchBucket = json_decode($matchCurl);
-	foreach($matchBucket as $mid){
-		array_push($b, $mid);
+	foreach($regions as $r){
+		$sql = "https://" . $r['Region'] . ".api.pvp.net/api/lol/" . strtolower($r['Region']) . "/v4.1/game/ids?api_key=" . $apiKey . "&beginDate=".$st;
+		$matchCurl = cURLRequest($sql);
+		$matchBucket = json_decode($matchCurl);
+
+		foreach($matchBucket as $mid){
+			$conn->query("REPLACE INTO `matchidqueue` (MatchId, Region) VALUES ('".$mid."', ".$r['ID'].");");
+		}
+		$st += 300;
 	}
-	echo $matchCurl;
-	$st += 300;
+	$conn->query("UPDATE `Settings` SET `Value` = '" . $st . "' WHERE `Setting`='urfbucketstime';");
 }
-}
-echo "<br /><br /><br /><br /><br />..........................................<br />";
-print_r($b);
 ?>

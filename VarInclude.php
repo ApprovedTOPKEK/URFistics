@@ -56,7 +56,7 @@ function saveGame($participant, $match, $uid, $r){
 	if(empty($gm)) return;
 	if(empty($participant['highestAchievedSeasonTier'])) return;
 	$team = $participant['teamId'];
-	$league = $participant['highestAchievedSeasonTier']; echo $league;
+	$league = $participant['highestAchievedSeasonTier'];// echo $league;
 	$champ = $participant['championId'];
 	$sumSpell1 = $participant['spell1Id'];
 	$sumSpell2 = $participant['spell2Id'];
@@ -84,7 +84,7 @@ function saveGame($participant, $match, $uid, $r){
 	$barons = $match['teams'][$team==100?0:1]['baronKills'];
 	$score = calcScore($kills, $deaths, $assists, $cs, $dragons, $barons, $largestKillingSpree, $wards);
 	$l = query("SELECT id, League FROM Leagues WHERE League='".$league."';");
-	print_r($l);
+	//print_r($l);
 	$iq = "REPLACE INTO statistics (MatchId, Region, Gamemode, League, UserId, Score, Ban1, Ban2, Ban3, Pick, Spell1, Spell2, Item0, Item1, Item2, Item3, Item4, Item5, Kills, Deaths, Assists, Wards, Gold, CS, Doubles, Triples, Quadras, Pentas, LargestSpree, Drakes, Barons)"
 		." VALUES ('"
 		.$match['matchId']."', '"

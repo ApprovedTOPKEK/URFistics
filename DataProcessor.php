@@ -20,6 +20,7 @@ foreach($ids as $id){
 //Calculate if a new fetch is needed. If yes, fetch one. //TODO: Cronjob to call this all 10 min in order to decrease page loading time
 $currentTime = time();
 if(($currentTime - ($currentTime % $settings['FetchDelay'])) - $settings['LastFetched'] >= $settings['FetchDelay']){
+	$conn->query("UPDATE `Settings` SET `Value` = '" . ($currentTime - ($currentTime % $settings['FetchDelay'])) . "' WHERE `Setting`='LastFetched';");
 	updateSettings();
     //TODO do it in another thread
     foreach($regions as $r) {
