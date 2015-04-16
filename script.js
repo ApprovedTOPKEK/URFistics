@@ -1,13 +1,18 @@
+
+//Hide all those tables
 function hideTables() {
 	var leagueStats = document.getElementsByClassName("statTable");
 	for (var i = 0; i < leagueStats.length; i++) {
 		leagueStats[i].style.display = "none";
 	}
 }
+
+//Slide the tables
 function toggleBtn(outerDiv) {
 	$("#" + outerDiv + " .leagueContent .statTable").toggle("slow");
 }
 
+//Simple AJAX, no time for cool JSON Parsing and stuff
 function searchSummoner() {
 	var sumName = $("#inputBar").val();
 	if (sumName.length < 4) return;

@@ -3,6 +3,15 @@
 //Include necessary scripts
 include_once "VarInclude.php";
 
+/**
+ * @param $_region Region for which the averages etc shall be fetched
+ * @param $_mode Mode for which the averages etc shall be fetched
+ * @param $_userid UserId for which the averages etc shall be fetched (-1 if none)
+ * @param $_league League for which the averages etc shall be fetched (-1 if none)
+ * @return Result of the query
+ *
+ * Complicated - probably inefficient - MySQL query to get averages of "standard"-data, and highest appartion frequency of other data. Not going to explain this one, it's a huge headache
+ */
 function statquery($_region, $_mode, $_userid, $_league){
 	global $settings;
 	$query = "	SELECT * FROM
@@ -169,7 +178,7 @@ function statquery($_region, $_mode, $_userid, $_league){
 	return empty($res)?$res:$res[0];
 }
 
-
+// Some helper functions to not write the same thing over and over again. This file is a freaking mess. Just don't look at it.
 function highestJoin($column, $alias, $r, $m, $uid, $l, $t){
 	global $settings;
 	return " JOIN(SELECT ".$column." AS ".$alias.from($r, $m, $uid, $l, $t)." GROUP BY ".$column." HAVING COUNT(".$column.") > 1) AS ".$t;

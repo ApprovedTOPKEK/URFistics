@@ -31,6 +31,4 @@ foreach($ls_leagues as $index => $league){
 //Return as JSON?
 if(isset($_GET['return']) && $_GET['return'] == "json") echo json_encode($data);
 
-//$data[$ls_leagues[$index]['ID']]
-
 ?>

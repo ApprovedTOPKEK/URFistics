@@ -5,15 +5,16 @@
  * 2. Player-Averages, compared to all-averages. f.e: "You belong in GOLD!"
  */
 
-/**  COMPONENT 1 **/
+if(!isset($index)) exit();
 
 //Set "return" variable in get to avoid problems with other scripts
 $_GET['return'] = "false";
-$regions = query("SELECT `ID`, `Region` FROM regions");
 
+//Include logic
 include "LeagueStats.php";
 include "PlayerStats.php";
 
+//include view
 include "Templates/Pages/cptma.phtml";
 
 ?>

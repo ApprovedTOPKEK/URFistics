@@ -36,10 +36,12 @@ function cURLRequest($link){
 	return $data;
 }
 
+//Score Algorithm. WAAAAAY TOO SIMPLE, F*CKING UP THE WHOLE WEBSITE... IMPERATIVELY CHANGE THIS!!!!! IT MUST BE DONE!! TODO!!
 function calcScore($k, $d, $a, $cs, $dragons, $barons, $largestKillingSpree, $wards){
 	return 30*$k - 50*$d + 22*$a + $cs + 10*$wards + 100*$dragons + 150*$barons + 5*$largestKillingSpree; //Calculate this in a more meaningful way
 }
 
+//Update the settings variable.
 function updateSettings(){
 	global $settings, $conn;
 	$rs = $conn->query("SELECT `Setting`, `Value` FROM Settings;");
@@ -50,11 +52,18 @@ function updateSettings(){
 	$settings = $arr;
 }
 
+//Save data for given arguments
 function saveGame($participant, $match, $uid, $r){
 	global $conn;
+
+	//Get the gamemode-id (Tables are joined for performance reasons). If the gamemode isnt contained yet in the database table, dont save anything. And add it manually later. Damn.
 	$gm = query("SELECT id FROM Gamemodes WHERE Gamemode='".$match['queueType']."';");
 	if(empty($gm)) return;
+
+	//Somehow no league data? Don't save anything.
 	if(empty($participant['highestAchievedSeasonTier'])) return;
+
+	//Get all the data!
 	$team = $participant['teamId'];
 	$league = $participant['highestAchievedSeasonTier'];// echo $league;
 	$champ = $participant['championId'];
@@ -83,14 +92,19 @@ function saveGame($participant, $match, $uid, $r){
 	$dragons = $match['teams'][$team==100?0:1]['dragonKills'];
 	$barons = $match['teams'][$team==100?0:1]['baronKills'];
 	$score = calcScore($kills, $deaths, $assists, $cs, $dragons, $barons, $largestKillingSpree, $wards);
+
+	//Get the league in which the player is. Same as with gamemode: Performance reasons.
 	$l = query("SELECT id, League FROM Leagues WHERE League='".$league."';");
-	//print_r($l);
+
+	//Save that sht
 	$iq = "REPLACE INTO statistics (MatchId, Region, Gamemode, League, UserId, Score, Ban1, Ban2, Ban3, Pick, Spell1, Spell2, Item0, Item1, Item2, Item3, Item4, Item5, Kills, Deaths, Assists, Wards, Gold, CS, Doubles, Triples, Quadras, Pentas, LargestSpree, Drakes, Barons)"
 		." VALUES ('"
 		.$match['matchId']."', '"
 		.$r['ID']."', '"
 		.$gm[0]['id']."', '"
 		.$l[0]['id']."', '".$uid."', '".$score."', '".$ban1."', '".$ban2."', '".$ban3."', '".$champ."', '".$sumSpell1."', '".$sumSpell2."', '".$item0."', '".$item1."', '".$item2."', '".$item3."', '".$item4."', '".$item5."', '".$kills."', '".$deaths."', '".$assists."', '".$wards."', '".$gold."', '".$cs."', '".$doubleKills."', '".$tripleKills."', '".$quadraKills."', '".$pentaKills."', '".$largestKillingSpree."', '".$dragons."', '".$barons."');";
+
+	//... And query it! Dude it rhimes
 	$conn->query($iq);
 }
 

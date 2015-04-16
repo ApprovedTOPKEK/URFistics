@@ -30,6 +30,7 @@ span{
 	position: relative; 
 	border: 1px solid #9c8335;
 	box-shadow: 10px 10px 5px #4f4c4c;
+    border-radius: 25px 25px 0px 0px;
 }
 .leagueIcon{
 	float: left;
@@ -96,7 +97,11 @@ td{
 	font-size: 1.5em;
 	padding: 1.1em;
 }
-
+.leagueStats {
+    width: 90%;
+    text-align: center;
+    margin-left: 3em;
+}
 #imgDiv{
 	text-align: left; 
 }
@@ -122,8 +127,6 @@ td{
 }
 #profileSection{
 	text-align: center;
-    float: right;
-    width: 45%;
 }
 #bar{ 
 	height: 4em;
@@ -167,7 +170,9 @@ td{
 	box-shadow: 10px 10px 5px #4f4c4c;
 }
 #playerStats{
-
+    float: right;
+    width: 45%;
+    margin: 4em;
 }
 #playerStattable{
 	position: relative;
@@ -191,14 +196,15 @@ td{
 }
 
 .comp {
+    font-style: normal;
     font-family: Impact;
-    color: #384185;
+    color: #fff690;
     font-size: 2em;
 }
 #var {
     font-style: italic;
     font-family: Impact;
-    color: #384185;
+    color: #fff690;
     font-size: 3em;
 }
 
@@ -219,4 +225,31 @@ html, body {
 #footer, .push {
     text-align: center;
     height: 2em;
+}
+
+/* Glyph, by Harry Roberts */
+
+hr {
+    padding: 0;
+    border: none;
+    border-top: medium double #ffffff;
+    color: #ffffff;
+    text-align: center;
+}
+
+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: none;
+}
+
+.fancyText {
+    font-style: normal;
+    font-family: Impact;
+    color: #fff690;
+    font-size: 2em;
 }
