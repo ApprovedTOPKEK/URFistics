@@ -17,7 +17,10 @@
 				Welcome Summoner!
 				<br/>
 				Check out the statistics of the new URF mode.
-				On this site, you can see the URF statistics of each League. You can also look up your own statistics and compare them with the average, in order to know in which League you belong! (todo needs to be modified. shitty text).
+				On this site, you can see the URF statistics of each League. You can also look up your own statistics and compare them with the average, in order to know in which League you belong! Scoreboards will be made available soon.
 				</span>
 			</div>
+			<br />
+			<hr />
+			<br />
 		</div>
