@@ -14,6 +14,7 @@ span{
 #stats{
 	width: 45%;
 	float: left;
+    text-align: center;
 }
 #masterStats{
 	background-color: #e7c047;
@@ -78,14 +79,14 @@ span{
 	width: 100%;
 	border-collapse: collapse;
 }
+
 td{
 	font-family: Impact;
-	color: #d8d2d2;
-	text-align: left;
-	border: 1px solid #d8d2d2;
+	color: #1B1B1B;
+	border: 1px solid #1B1B1B;
 	padding: 0.5em;
-	background-color: #ec2b2b;
-	box-shadow: 10px 10px 5px #4f4c4c;
+	background-color: #99CCFF;
+	box-shadow: 5px 5px 5px #4f4c4c;
 }	
 .leagueButton{
 	font-family: Impact;
@@ -95,27 +96,7 @@ td{
 	font-size: 1.5em;
 	padding: 1.1em;
 }
-#refreshButton{
-	text-align: center;
-	font-family: Impact;
-	color: #a5b80c;
-	background-color: #239013;
-	width: 20%;
-	border-radius: 0px 0px 10px 10px; 
-}
-#refreshText{
-	position: inline-block;
-	float: right; 
-	padding: 0em;
-	font-size: 1.5em;
-	text-align: center; 
-}
-#refreshImg{
-	height: 20%; 
-	width: 20%;
-	padding: 0.25em;
-	text-align: left;
-}
+
 #imgDiv{
 	text-align: left; 
 }
@@ -128,9 +109,7 @@ td{
     background-image: url(images/background.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
-    opacity: 0.5;
-	filter: alpha(opacity=50);
+    background-size: 100% 100%;
 	z-index: -20;
 }
 #topText{ 
@@ -142,7 +121,9 @@ td{
 	padding-top: 1em;
 }
 #profileSection{
-	text-align: center; 
+	text-align: center;
+    float: right;
+    width: 45%;
 }
 #bar{ 
 	height: 4em;
@@ -186,34 +167,24 @@ td{
 	box-shadow: 10px 10px 5px #4f4c4c;
 }
 #playerStats{
-	float: right; 
-	width: 45%;
+
 }
 #playerStattable{
 	position: relative;
 	width: 100%;
 	border-collapse: collapse;
-	box-shadow: 10px 10px 5px #4f4c4c;
+	box-shadow: 5px 5px 5px #4f4c4c;
 }
 
-.champ {
-    width: 45px;
-    height: 45px;
+.Icons {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #1B1B1B;
 }
-.spell {
-    width: 45px;
-    height: 45px;
-}
-
 #loading {
     display: none;
 }
 
-#footer {
-    clear: both;
-    text-align: center;
-
-}
 
 .verifiedBar {
 
@@ -229,4 +200,23 @@ td{
     font-family: Impact;
     color: #384185;
     font-size: 3em;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+#contentWrapper{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: 4em;
+}
+
+#footer, .push {
+    text-align: center;
+    height: 2em;
 }

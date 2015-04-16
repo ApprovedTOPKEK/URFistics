@@ -2,12 +2,12 @@
 
 	<?php foreach ($ls_leagues as $index => $league) {
 		if (strtolower($ls_leagues[$index]['League']) == "master") continue; ?>
-		<div class="specific" id="<?php echo strtolower($ls_leagues[$index]['League']); ?>Stats">
-			<div class='leagueButton'
-			     onclick="toggleBtn('<?php echo strtolower($ls_leagues[$index]['League']); ?>Stats')">
+		<div class="leagueStats" id="<?php echo strtolower($ls_leagues[$index]['League']); ?>Stats">
+			<div class='leagueButton' onclick="toggleBtn('<?php echo strtolower($ls_leagues[$index]['League']); ?>Stats')">
 				<img class='leagueIcon' src='images/<?php echo $ls_leagues[$index]['League']; ?>.png'/>
 				<span class='fancyText'><?php echo strtoupper($ls_leagues[$index]['League']); ?></span>
 			</div>
+			<div class="leagueContent">
 			<table class='statTable'>
 				<tr>
 					<td>Average Score</td>
@@ -15,35 +15,35 @@
 				</tr>
 				<tr>
 					<td>Most Banned</td>
-					<td><img class='champ'
+					<td><img class='Icons'
 					         src='images/c<?php echo empty($data[$ls_leagues[$index]['ID']]['TopBan1']) ? 0 : $data[$ls_leagues[$index]['ID']]['TopBan1']; ?>.png'/><img
-							class='champ'
+							class='Icons'
 							src='images/c<?php echo empty($data[$ls_leagues[$index]['ID']]['TopBan2']) ? 0 : $data[$ls_leagues[$index]['ID']]['TopBan2']; ?>.png'/><img
-							class='champ'
+							class='Icons'
 							src='images/c<?php echo empty($data[$ls_leagues[$index]['ID']]['TopBan3']) ? 0 : $data[$ls_leagues[$index]['ID']]['TopBan3']; ?>.png''
 						/>
 					</td>
 				</tr>
 				<tr>
 					<td>Most Picked</td>
-					<td><img class='champ'
+					<td><img class='Icons'
 					         src='images/c<?php echo $data[$ls_leagues[$index]['ID']]['TopPick']; ?>.png'/></td>
 				</tr>
 				<tr>
 					<td>Most Popular Summoners</td>
-					<td><img class='spell '
+					<td><img class='Icons '
 					         src='images/s<?php echo $data[$ls_leagues[$index]['ID']]['TopSpell1']; ?>.png'/><img
-							class='spell'
+							class='Icons'
 							src='images/s<?php echo $data[$ls_leagues[$index]['ID']]['TopSpell2']; ?>.png'/></td>
 				<tr>
 					<td>Most Popular Items</td>
 					<td>
 						<img class='Icons'
-						     src='http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem1']; ?>.png'/>
+						     src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem1']; ?>.png'/>
 						<img class='Icons'
-						     src='http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem2']; ?>.png'/>
+						     src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem2']; ?>.png'/>
 						<img class='Icons'
-						     src='http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem3']; ?>.png'/>
+						     src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/<?php echo $data[$ls_leagues[$index]['ID']]['PopItem3']; ?>.png'/>
 					</td>
 				</tr>
 				<tr>
@@ -91,6 +91,7 @@
 					<td><?php echo round($data[$ls_leagues[$index]['ID']]['Pentas'], 1); ?></td>
 				</tr>
 			</table>
+			</div>
 		</div>
 	<?php } ?>
 	<!--<div id="refreshButton">
@@ -104,4 +105,3 @@
 <script>
 	hideTables();
 </script>
-</div>

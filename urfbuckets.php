@@ -3,7 +3,6 @@ include_once 'VarInclude.php';
 $st = '1427915100';
 $b = array();
 
-$regions = query("SELECT `ID`, `Region` FROM regions");
 foreach ($regions as $r) {
 set_time_limit(600);
 while($st < (1428926400-30*3000)){

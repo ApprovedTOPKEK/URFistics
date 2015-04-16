@@ -9,14 +9,15 @@
 </head>
 <body>
 	<div id="background"></div>
-	<div id="top" style="overflow: auto; width: 100%;">
-		<h1 style="float: left; width: 20%;">URFistics</h1>
-		<div id="textt" style="overflow: hidden;">
-			<span>
-			Welcome Summoner!
-			<br/>
-			Check out the statistics of the new URF mode.
-			On this site, you can see the URF statistics of each League. You can also look up your own statistics and compare them with the average, in order to know in which League you belong! (todo needs to be modified. shitty text).
-			</span>
+	<div id="contentWrapper">
+		<div id="top" style="overflow: auto; width: 100%;">
+			<h1 style="float: left; width: 20%;">URFistics</h1>
+			<div id="textt" style="overflow: hidden;">
+				<span>
+				Welcome Summoner!
+				<br/>
+				Check out the statistics of the new URF mode.
+				On this site, you can see the URF statistics of each League. You can also look up your own statistics and compare them with the average, in order to know in which League you belong! (todo needs to be modified. shitty text).
+				</span>
+			</div>
 		</div>
-	</div>

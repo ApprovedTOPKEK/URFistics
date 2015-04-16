@@ -33,6 +33,7 @@ if($verifiedUser){
 	$curlr = cURLRequest("https://" . strtolower($ps_r['Region']) . ".api.pvp.net/api/lol/" . strtolower($ps_r['Region']) . "/v1.4/summoner/by-name/" . rawurlencode($ps_Username) . "?api_key=" . $apiKey);
 	if($curlr != "false"){
 		$summoner = json_decode($curlr, true);
+		//print_r($summoner);
 		$games = json_decode(cURLRequest("https://" . strtolower($ps_r['Region']) . ".api.pvp.net/api/lol/" . strtolower($ps_r['Region']) . "/v1.3/game/by-summoner/" . $summoner[strtolower($ps_Username)]["id"] . "/recent?api_key=" . $apiKey), true);
 
 		//maybe store teammates too in order to gain data?

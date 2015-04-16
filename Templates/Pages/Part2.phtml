@@ -20,16 +20,24 @@
 			</tr>
 			<tr>
 				<td>Most Picked</td>
-				<td><img class="champ" src="images/c<?php echo $playerStats['TopPick']; ?>.png"/></td>
+				<td><img class="Icons" src="images/c<?php echo $playerStats['TopPick']; ?>.png"/></td>
 			</tr>
 			<tr>
 				<td>Most Popular Summoner Spells</td>
-				<td><img class="spell" src="images/s<?php echo $playerStats['TopSpell1']; ?>.png"/> <img class="spell" src="images/s<?php echo $playerStats['TopSpell2']; ?>.png"/>
+				<td><img class="Icons" src="images/s<?php echo $playerStats['TopSpell1']; ?>.png"/>
+					<img class="Icons" src="images/s<?php echo $playerStats['TopSpell2']; ?>.png"/>
 				</td>
 			</tr>
 			<tr>
 				<td>Most Popular Items</td>
-				<td> TODO</td>
+				<td>
+					<img class='Icons'
+					     src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/<?php echo $playerStats['PopItem1']; ?>.png'/>
+					<img class='Icons'
+					     src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/<?php echo $playerStats['PopItem2']; ?>.png'/>
+					<img class='Icons'
+					     src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/<?php echo $playerStats['PopItem3']; ?>.png'/>
+				</td>
 			</tr>
 			<tr>
 				<td>Average Creep Score</td>
