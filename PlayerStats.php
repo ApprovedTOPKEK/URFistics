@@ -9,7 +9,7 @@
 //Include necessary scripts
 include_once "VarInclude.php";
 
-//Include utility method to build query. In another PHP File for clarity (MANAPROBLEMS INCOMING) n stuff
+//Include utility method to build query. In another PHP File for clarity (MANAPROBLEMS INCOMING) n stuff (outdated comment)
 include_once 'StatQuery.php';
 
 //Selected region
