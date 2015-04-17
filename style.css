@@ -337,3 +337,14 @@ hr:after {
 	margin: none;
 	height: 100%;
 }
+
+.ptable {
+    width: 100%;
+    margin-left: 2em;
+}
+
+#leadPlayerstattable {
+    float: right;
+    width: 45%;
+    margin-right: 2em;
+}

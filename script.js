@@ -50,3 +50,21 @@ function compareScoreWith(score, dia, plat, gold, silver, bronze, unr) {
 	 });*/
 	return tmp[Math.min.apply(Math, Object.keys(tmp))];
 }
+
+function slbt(x){
+	$(".statTable").show("slow");
+	$("#tds").text(Math.round(jsonData[x]['Score']));
+	$("#tb1").attr("src", "images/c" + jsonData[x]['TopBan1'] + ".png");
+	$("#tb2").attr("src", "images/c" + jsonData[x]['TopBan2'] + ".png");
+	$("#tb3").attr("src", "images/c" + jsonData[x]['TopBan3'] + ".png");
+	$("#ts1").attr("src", "images/s" + jsonData[x]['TopSpell1'] + ".png");
+	$("#ts2").attr("src", "images/s" + jsonData[x]['TopSpell1'] + ".png");
+	$("#mp").attr("src", "images/c" + jsonData[x]['TopPick'] + ".png");
+	$("#pi1").attr("src", "http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/" + jsonData[x]['PopItem1'] + ".png");
+	$("#pi2").attr("src", "http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/" + jsonData[x]['PopItem2'] + ".png");
+	$("#pi3").attr("src", "http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/" + jsonData[x]['PopItem3'] + ".png");
+	$("#tdcs").text(Math.round(jsonData[x]['CS']));
+	$("#tdg").text(Math.round(jsonData[x]['Gold']));
+	$("#tdw").text(Math.round(jsonData[x]['Wards']));
+	$("#tdkda").text(Math.round(jsonData[x]['Kills']) + "/" + Math.round(jsonData[x]['Deaths']) + "/" + Math.round(jsonData[x]['Assists']));
+}

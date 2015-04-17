@@ -1,0 +1,77 @@
+		<div id="dropDown">
+			<select id="gameSelector">
+						<option value="normal">Normal 5 vs 5</option>
+						<option value="ranked">Ranked 5 vs 5</option>
+						<option value="aram">ARAM</option>
+						<option value="twisted_treeline">Twisted Treeline</option> //DOPHP
+						<option value="dominion">Dominion</option>
+						<option value="aram">URF</option>
+					</select>
+					<button id="lboardsSearchbutton" type="button"><img src="images/search.png"/></button>
+		</div>
+		</br></br></br></br>
+		<div id="leaderboards">
+			<?php for ($x = 0; $x < count($lbdata); $x++) { $clbd = $lbdata[$x];?>
+			<div class="players">
+				<table class="ptable">
+					<tr>
+						<td class="number"><?php echo $x+1;?>.</td>
+						<td class="regionStyle">[<?php echo $clbd['R'];?>]</td>
+						<td class="playerStyle"><?php echo $clbd['Summoner']['name'];?></td>
+						<td class="scoreStyle"><?php echo $clbd['Score'];?>
+							<button class="viewStats" onclick="slbt(<?php echo $x;?>)" type="button">&#8658;</button></td>
+					</tr>
+				</table>
+			</div>
+			<?php } ?>
+		</div>
+			<table class="statTable" id="leadPlayerstattable">
+						<tr> 
+							<td>Average Score</td>
+							<td id="tds">{Score}</td>
+						</tr>
+						<tr> 
+							<td>Most Banned</td>
+							<td><img id="tb1" src="c{TopBan1}.png" class='Icons' /> <img id="tb2" class='Icons' src="c{TopBan2}.png"/> <img id="tb3"
+							                                                                                   class='Icons' src="c{TopBan3}.png"/></td>
+						</tr>
+						<tr>
+							<td>Most Picked</td>
+							<td><img id="mp" class='Icons' src="c{playerPick}.png"/></td>
+						</tr>
+						<tr> 
+							<td>Most Popular Summoner Spells</td>
+							<td><img id="ts1" class='Icons' src="s{TopSpell1}.png"/> <img class='Icons' id="ts2" src="s{TopSpell2}.png"/></td>
+						</tr>
+						<tr> 
+							<td>Most Popular Items</td>
+							<td>
+								<img id="pi1" class='Icons'
+									src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/{PopItem1}.png'/>
+								<img id="pi2" class='Icons'
+									src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/{PopItem2}.png'/>
+								<img id="pi3" class='Icons'
+									src='http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/{PopItem3}.png'/>
+							</td>
+						</tr>
+						<tr> 
+							<td>Average Creep Score</td>
+							<td id="tdcs">{CS}</td>
+						</tr>
+						<tr> 
+							<td>Average Gold</td>
+							<td id="tdg">{Gold}</td>
+						</tr>
+						<tr> 
+							<td>Average Wards Placed</td>
+							<td id="tdw">{Wards}</td>
+						</tr>
+						<tr> 
+							<td>Average KDA</td>
+							<td id="tdkda">{Kills}/{Deaths}/{Assists}</td>
+						</tr>
+					</table>
+		<script>
+			hideTables();
+			var jsonData = JSON.parse('<?php echo json_encode($lbdata);?>');
+		</script>

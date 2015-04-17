@@ -172,8 +172,6 @@ function statquery($_region, $_mode, $_userid, $_league){
 				"
 		.highestJoin("Pick", "TopPick", $_region, $_mode, $_userid, $_league, "t4").";";
 
-	//echo $query;
-	//echo $query."<br /><br /><br /><br /><br />";
 	$res = query($query);
 	return empty($res)?$res:$res[0];
 }
@@ -181,7 +179,7 @@ function statquery($_region, $_mode, $_userid, $_league){
 // Some helper functions to not write the same thing over and over again. This file is a freaking mess. Just don't look at it.
 function highestJoin($column, $alias, $r, $m, $uid, $l, $t){
 	global $settings;
-	return " JOIN(SELECT ".$column." AS ".$alias.from($r, $m, $uid, $l, $t)." GROUP BY ".$column." HAVING COUNT(".$column.") > 1) AS ".$t;
+	return " JOIN(SELECT ".$column." AS ".$alias.from($r, $m, $uid, $l, $t)." GROUP BY ".$column." HAVING COUNT(".$column.") > 0 LIMIT 0, 1) AS ".$t;
 }
 function whereClause($rg, $m, $uid, $l){
 	$q = "WHERE `Region` = ".$rg." AND `Gamemode` = ".$m;

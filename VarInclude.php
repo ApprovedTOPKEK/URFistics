@@ -18,6 +18,7 @@ include 'DataProcessor.php';
 
 //cURL
 function cURLRequest($link){
+	//echo "<br />".$link;
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $link);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -26,6 +27,7 @@ function cURLRequest($link){
 	$data = curl_exec($ch);
 	$info = curl_getinfo($ch);
 	curl_close($ch);
+	//echo $info['http_code']."<br />";
 	if($info['http_code'] == 429){
 		sleep(1);
 		return cURLRequest($link);
