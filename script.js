@@ -58,7 +58,7 @@ function slbt(x){
 	$("#tb2").attr("src", "images/c" + jsonData[x]['TopBan2'] + ".png");
 	$("#tb3").attr("src", "images/c" + jsonData[x]['TopBan3'] + ".png");
 	$("#ts1").attr("src", "images/s" + jsonData[x]['TopSpell1'] + ".png");
-	$("#ts2").attr("src", "images/s" + jsonData[x]['TopSpell1'] + ".png");
+	$("#ts2").attr("src", "images/s" + jsonData[x]['TopSpell2'] + ".png");
 	$("#mp").attr("src", "images/c" + jsonData[x]['TopPick'] + ".png");
 	$("#pi1").attr("src", "http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/" + jsonData[x]['PopItem1'] + ".png");
 	$("#pi2").attr("src", "http://ddragon.leagueoflegends.com/cdn/5.6.2/img/item/" + jsonData[x]['PopItem2'] + ".png");
