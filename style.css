@@ -300,3 +300,40 @@ hr:after {
 	float: right; 
 	width: 45%;
 }
+.regionStyle{
+	font-family: Impact; 
+	font-weight: bold; 
+	font-size: 2em;
+	color: #314159;
+	display: inline-block; 
+	text-align: center;
+}
+#gameSelector{
+	border: 5px solid #c5c1c1; 
+	position: relative;
+	padding: 0.5em;
+	font-family: Impact;
+	color: white;
+	font-size: 1em;
+	background-color: #c5c1c1;
+	border-radius: 10px 10px 10px 10px;
+	width: 75%;
+	text-align: center;
+	left: 7%;
+}
+#dropDown{
+	width: 45%;
+	float: left;
+	background-color: #314159;
+	height: 50px;
+}
+#lboardsSearchbutton{
+	width: 5em;  
+	border: 5px solid #c5c1c1; 
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+	padding: 0em;
+	float: right;
+	margin: none;
+	height: 100%;
+}
